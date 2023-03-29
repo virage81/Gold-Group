@@ -1,0 +1,15 @@
+.form {
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		height: 100vh;
+	}
+
+	&__popup {
+		position: relative;
+		transform: translateY(0);
+	}
+}

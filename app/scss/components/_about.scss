@@ -7,7 +7,7 @@
 	background-size: 240px 200px, 350px 80px, 180px 340px, 120px 360px, 140px 140px, 300px 70px;
 
 	&__inner {
-		height: calc(100vh - 80px);
+		height: 100vh;
 
 		display: flex;
 		flex-direction: column;

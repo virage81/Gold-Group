@@ -5,7 +5,7 @@ html {
 *,
 *::after,
 *::before {
-	box-sizing: inherit;
+	box-sizing: border-box;
 }
 
 ul[class],
@@ -41,7 +41,7 @@ img {
 	height: auto;
 }
 
-input, 
+input,
 button,
 textarea,
 select {
