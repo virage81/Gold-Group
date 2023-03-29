@@ -2,7 +2,7 @@
 
 ## Language:
 
-[RU](#) | [ENG](#Language English)
+[RU](#Русский) | [ENG](#English)
 
 ## English
 
