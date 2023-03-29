@@ -1,0 +1,22 @@
+body {
+	@include default-text;
+	line-height: 1;
+	background-color: #232323;
+}
+
+section {
+	color: #fff;
+	padding-top: 150px;
+}
+
+.container {
+	max-width: 1240px;
+	width: 100%;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+//slider
+.swiper-wrapper {
+	height: 100vh;
+}

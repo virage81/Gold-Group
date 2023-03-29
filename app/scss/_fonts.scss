@@ -1,0 +1,19 @@
+@font-face {
+	font-family: "Spectral";
+	src: local("Spectral"), url(./../fonts/Spectral-Regular.woff2) format(woff2), url(./../fonts/Spectral-Regular.woff) format(woff),
+		url(./../fonts/Spectral-Regular.ttf) format(truetype);
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	font-variant: normal;
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: local("Montserrat"), url(./../fonts/Montserrat-Regular.woff2) format(woff2), url(./../fonts/Montserrat-Regular.woff) format(woff),
+		url(./../fonts/Montserrat-Regular.ttf) format(truetype);
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	font-variant: normal;
+}
