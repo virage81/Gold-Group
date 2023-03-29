@@ -19,7 +19,7 @@ function browsersync() {
 
 function styles() {
 	return src("app/scss/style.scss")
-		.pipe(scss({ outputStyle: "compressed" }))
+		.pipe(scss({ outputStyle: "compressed" /*expanded*/ }))
 		.pipe(concat("style.min.css"))
 		.pipe(
 			autoprefixer({
@@ -32,7 +32,11 @@ function styles() {
 }
 
 function scripts() {
-	return src("app/js/main.js").pipe(concat("main.min.js")).pipe(uglify()).pipe(dest("app/js")).pipe(browserSync.stream());
+	return src(["node_modules/swiper/swiper-bundle.js", "app/js/main.js"])
+		.pipe(concat("main.min.js"))
+		.pipe(uglify())
+		.pipe(dest("app/js"))
+		.pipe(browserSync.stream());
 }
 
 function images() {

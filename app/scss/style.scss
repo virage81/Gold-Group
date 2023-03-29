@@ -1,6 +1,14 @@
-@import 'vars';
-@import 'fonts';
-@import 'normalize';
-@import 'glob';
+@import "vars";
+@import "fonts";
+@import "normalize";
+@import "glob";
 
-@import 'media';
+@import "header";
+@import "main";
+@import "about";
+@import "features";
+@import "form";
+@import "contacts";
+@import "footer";
+
+@import "media";
