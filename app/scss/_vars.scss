@@ -1,5 +1,6 @@
 $default-color: #282828;
 $accent-color: #f1d86c;
+$heading-color: #a87b22;
 
 @mixin default-text {
 	font: {
@@ -15,5 +16,5 @@ $accent-color: #f1d86c;
 		size: 72px;
 		weight: 400;
 	}
-	color: $default-color;
+	color: $heading-color;
 }

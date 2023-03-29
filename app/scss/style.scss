@@ -3,12 +3,12 @@
 @import "normalize";
 @import "glob";
 
-@import "header";
-@import "main";
-@import "about";
-@import "features";
-@import "form";
-@import "contacts";
-@import "footer";
+@import "components/header";
+@import "components/top";
+@import "components/about";
+@import "components/features";
+@import "components/form";
+@import "components/contacts";
+@import "components/footer";
 
 @import "media";
