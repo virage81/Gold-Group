@@ -1,0 +1,51 @@
+.top {
+	background-image: url(../../img/decor/top-slide/top-slide-01.png), url(../../img/decor/top-slide/top-slide-02.png),
+		url(../../img/decor/top-slide/top-slide-03.png), url(../../img/decor/top-slide/top-slide-04.png), url(../../img/decor/top-slide/top-slide-05.png),
+		url(../../img/decor/top-slide/top-slide-06.png), url(../../img/decor/top-slide/top-slide-07.png);
+	background-position: top left, top center, top right, center right, bottom right, bottom left, bottom center;
+	background-repeat: no-repeat;
+	background-size: auto;
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		height: 100vh;
+	}
+
+	&__title {
+		@include heading;
+
+		padding-bottom: 15px;
+	}
+
+	&__subtitle {
+		font: {
+			family: "Spectral";
+			size: 36px;
+		}
+		color: #fff;
+
+		padding-bottom: 100px;
+	}
+
+	&__button {
+		border: none;
+		border-radius: 10px;
+
+		padding: 20px 60px;
+
+		background-color: $accent-color;
+		color: $default-color;
+
+		font: {
+			family: "Montserrat";
+			size: 24px;
+		}
+		cursor: pointer;
+
+		z-index: 10;
+	}
+}
