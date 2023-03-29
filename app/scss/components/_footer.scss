@@ -2,4 +2,21 @@
 	background-color: $accent-color;
 
 	height: 80px;
+
+	&__inner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		height: 80px;
+	}
+
+	&__link {
+		font-size: 22px;
+		color: $default-color;
+		opacity: 0.7;
+		& + & {
+			margin-left: 40px;
+		}
+	}
 }

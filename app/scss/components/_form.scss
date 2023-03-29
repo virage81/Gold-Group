@@ -1,4 +1,10 @@
 .form {
+	background-image: url(../../img/decor/form-slide/form-slide-01.png), url(../../img/decor/form-slide/form-slide-02.png),
+		url(../../img/decor/form-slide/form-slide-03.png), url(../../img/decor/form-slide/form-slide-04.png),
+		url(../../img/decor/form-slide/form-slide-05.png), url(../../img/decor/form-slide/form-slide-06.png);
+	background-position: top 80px left, top 80px center, top 80px right, bottom left, bottom center, bottom right;
+	background-repeat: no-repeat;
+	background-size: 160px 120px, 400px 70px, 180px 220px, 160px 140px, 140px 40px, 80px 320px;
 	&__inner {
 		display: flex;
 		flex-direction: column;
