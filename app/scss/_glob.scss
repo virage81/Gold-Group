@@ -4,8 +4,10 @@ body {
 	background-color: #232323;
 }
 
-.top__inner {
-	color: #fff;
+.top__inner,
+.about__inner,
+.features__inner,
+.contacts__inner {
 	padding-top: 80px;
 }
 
@@ -14,6 +16,14 @@ body {
 	width: 100%;
 	padding: 0 20px;
 	margin: 0 auto;
+}
+
+.title {
+	@include heading;
+	text-align: center;
+	text-transform: uppercase;
+
+	padding-bottom: 50px;
 }
 
 //slider

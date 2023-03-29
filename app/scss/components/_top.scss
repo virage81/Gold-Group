@@ -2,9 +2,9 @@
 	background-image: url(../../img/decor/top-slide/top-slide-01.png), url(../../img/decor/top-slide/top-slide-02.png),
 		url(../../img/decor/top-slide/top-slide-03.png), url(../../img/decor/top-slide/top-slide-04.png), url(../../img/decor/top-slide/top-slide-05.png),
 		url(../../img/decor/top-slide/top-slide-06.png), url(../../img/decor/top-slide/top-slide-07.png);
-	background-position: top left, top center, top right, center right, bottom right, bottom left, bottom center;
+	background-position: top 50px left, top 40px center, top 80px right, top 650px right, bottom right, bottom left, bottom center;
 	background-repeat: no-repeat;
-	background-size: 260px 500px, 460px 190px, 210px 300px, 90px 120px, 220px 170px, 170px 190px, 680px 150px;
+	background-size: 220px 430px, 460px 190px, 210px 300px, 90px 120px, 220px 170px, 170px 190px, 680px 150px;
 
 	&__inner {
 		display: flex;
@@ -16,8 +16,6 @@
 	}
 
 	&__title {
-		@include heading;
-
 		padding-bottom: 15px;
 	}
 
