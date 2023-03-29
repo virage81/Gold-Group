@@ -55,7 +55,7 @@ function images() {
 }
 
 function build() {
-	return src(["app/**/*.html", "app/css/style.min.css", "app/js/main.min.js"], { base: "app" }).pipe(dest("docs/"));
+	return src(["app/**/*.html", "app/fonts/**.*", "app/css/style.min.css", "app/js/main.min.js"], { base: "app" }).pipe(dest("docs/"));
 }
 
 function cleanDist() {
