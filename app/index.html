@@ -8,36 +8,38 @@
 		<title>Gold Group</title>
 	</head>
 	<body>
-		<div class="popup">
-			<form action="#" class="popup__form">
-				<label class="popup__form__label">
-					Фамилия*
-					<input type="text" name="last name" placeholder="Иванов" required class="popup__form__input" />
-				</label>
-				<label class="popup__form__label">
-					Имя*
-					<input type="text" name="name" placeholder="Иван" required class="popup__form__input" />
-				</label>
-				<label class="popup__form__label">
-					Отчество
-					<input type="text" name="surname" placeholder="Иванович" required class="popup__form__input" />
-				</label>
-				<label class="popup__form__label">
-					Номер телефона*
-					<input
-						type="tel"
-						placeholder="+7 999 999-99-99"
-						id="phone"
-						name="phone"
-						pattern="+7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}"
-						class="popup__form__input"
-						required
-					/>
-				</label>
-				<p class="popup__form__text">* Поля, обязательные для заполнения</p>
-				<p class="popup__form__text">Нажимая на кнопку, вы даете своё согласние на персональную обработку данных</p>
-				<button type="submit" id="submitBtn" class="popup__form__button">Отправить заявку</button>
-			</form>
+		<div class="popup__container">
+			<div class="popup" id="popup">
+				<form action="#" class="popup__form">
+					<label class="popup__form__label">
+						Фамилия*
+						<input type="text" name="last name" placeholder="Иванов" required class="popup__form__input" />
+					</label>
+					<label class="popup__form__label">
+						Имя*
+						<input type="text" name="name" placeholder="Иван" required class="popup__form__input" />
+					</label>
+					<label class="popup__form__label">
+						Отчество
+						<input type="text" name="surname" placeholder="Иванович" class="popup__form__input" />
+					</label>
+					<label class="popup__form__label">
+						Номер телефона*
+						<input
+							type="tel"
+							placeholder="+7 999 999-99-99"
+							id="phone"
+							name="phone"
+							pattern="+7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}"
+							class="popup__form__input"
+							required
+						/>
+					</label>
+					<p class="popup__form__text">* Поля, обязательные для заполнения</p>
+					<p class="popup__form__text">Нажимая на кнопку, вы даете своё согласние на персональную обработку данных</p>
+					<button type="submit" id="submitBtn" class="popup__form__button">Отправить заявку</button>
+				</form>
+			</div>
 		</div>
 		<header class="header">
 			<div class="container">
@@ -72,7 +74,7 @@
 						<div class="top__inner">
 							<h1 class="top__title title">GOLD GROUP</h1>
 							<p class="top__subtitle">Предоставление персонала</p>
-							<button class="top__button">Оставить заявку</button>
+							<button class="top__button" id="form-button">Оставить заявку</button>
 						</div>
 					</div>
 				</section>
