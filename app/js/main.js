@@ -3,10 +3,12 @@ let slider = document.querySelector(".slider");
 let topButton = document.querySelector("#form-button");
 let popup = document.querySelector(".popup__container");
 
-const swiper = new Swiper(slider, {
+let swiper = new Swiper(slider, {
 	direction: "vertical",
 	slidesPerView: 1,
-	hashNavigation: true,
+	hashNavigation: {
+		watchState: true,
+	},
 
 	effect: "fade",
 	fadeEffect: {
@@ -20,13 +22,14 @@ const swiper = new Swiper(slider, {
 	mousewheel: true,
 });
 
+// если курсор на карте, слайдер отключается
 addEventListener("mouseover", (e) => {
 	if (e.target.className == "ymaps-2-1-79-events-pane ymaps-2-1-79-user-selection-none") {
-		swiper.mousewheel = false;
-		console.log(true);
-	}
+		swiper.enabled = false;
+	} else swiper.enabled = true;
 });
 
+// отображение модального окна
 topButton.addEventListener("click", () => {
 	popup.classList.add("show");
 });
