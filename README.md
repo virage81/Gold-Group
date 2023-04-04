@@ -1,4 +1,4 @@
-# Logo gold
+# Gold Group
 
 ## Language:
 
