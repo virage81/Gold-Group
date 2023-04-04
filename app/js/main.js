@@ -4,6 +4,7 @@ let topButton = document.querySelector("#form-button");
 let popup = document.querySelector(".popup__container");
 let headerBtn = document.querySelector("#header-button");
 let headerNav = document.querySelector(".header__nav");
+let headerLinks = document.querySelectorAll(".header__link");
 
 let swiper = new Swiper(slider, {
 	direction: "vertical",
@@ -42,7 +43,20 @@ window.addEventListener("click", function (e) {
 
 // Переключение навигации в header
 headerBtn.addEventListener("click", (e) => {
-	headerNav.classList.contains("header__nav--show") ? headerNav.classList.remove("header__nav--show") : headerNav.classList.add("header__nav--show");
+	if (headerNav.classList.contains("header__nav--show")) {
+		headerBtn.classList.remove("header__button--close");
+		headerNav.classList.remove("header__nav--show");
+	} else {
+		headerBtn.classList.add("header__button--close");
+		headerNav.classList.add("header__nav--show");
+	}
+});
+
+headerLinks.forEach((item) => {
+	item.addEventListener("click", () => {
+		headerBtn.classList.remove("header__button--close");
+		headerNav.classList.remove("header__nav--show");
+	});
 });
 
 // yandex map

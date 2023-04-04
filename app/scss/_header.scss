@@ -52,6 +52,7 @@
 
 		padding: 8px 0;
 		width: 30px;
+		height: 30px;
 
 		background: none;
 		border: none;
@@ -59,7 +60,9 @@
 
 		cursor: pointer;
 
-		&-span {
+		transition: all 0.2s linear;
+
+		&__span {
 			background-color: $default-color;
 			border-radius: 10px;
 
@@ -83,6 +86,8 @@
 
 			height: 3px;
 			width: 100%;
+
+			transition: all 0.2s linear;
 		}
 
 		&::before {
@@ -91,6 +96,25 @@
 
 		&::after {
 			bottom: -5px;
+		}
+
+		&.header__button--close {
+			.header__button__span {
+				display: none;
+			}
+
+			&::before,
+			&::after {
+				width: 35px;
+			}
+
+			&::before {
+				transform: translateY(8px) rotate(45deg);
+			}
+
+			&::after {
+				transform: translateY(-5px) rotate(-45deg);
+			}
 		}
 	}
 }
