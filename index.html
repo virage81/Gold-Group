@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<div class="popup__container">
-			<div class="popup" id="popup">
+			<div class="popup">
 				<form action="#" class="popup__form">
 					<label class="popup__form__label">
 						Фамилия*
@@ -22,7 +22,7 @@
 					</label>
 					<label class="popup__form__label">
 						Отчество
-						<input type="text" name="surname" placeholder="Иванович" class="popup__form__input" />
+						<input type="text" name="surname" placeholder="Иванович" required class="popup__form__input" />
 					</label>
 					<label class="popup__form__label">
 						Номер телефона*
@@ -45,26 +45,29 @@
 		<header class="header">
 			<div class="container">
 				<div class="header__inner">
-					<a class="header__logo" href="#main">Gold Group</a>
+					<a class="header__logo" data-hash="#main" href="#main">Gold Group</a>
 					<nav class="header__nav">
 						<ul class="header__list">
 							<li class="header__list-item">
-								<a class="header__link" href="#main">Главная</a>
+								<a class="header__link" data-hash="#main" href="#main">Главная</a>
 							</li>
 							<li class="header__list-item">
-								<a class="header__link" href="#about">О нас</a>
+								<a class="header__link" data-hash="#about" href="#about">О нас</a>
 							</li>
 							<li class="header__list-item">
-								<a class="header__link" href="#features">Преимущества</a>
+								<a class="header__link" data-hash="#features" href="#features">Преимущества</a>
 							</li>
 							<li class="header__list-item">
-								<a class="header__link" href="#form">Оставить заявку</a>
+								<a class="header__link" data-hash="#form" href="#form">Оставить заявку</a>
 							</li>
 							<li class="header__list-item">
-								<a class="header__link" href="#contacts">Контакты</a>
+								<a class="header__link" data-hash="#contact" href="#contacts">Контакты</a>
 							</li>
 						</ul>
 					</nav>
+					<button class="header__button" id="header-button">
+						<span class="header__button__span"></span>
+					</button>
 				</div>
 			</div>
 		</header>
@@ -102,7 +105,7 @@
 									<p class="features__item__text">Опертивный подбор кадров</p>
 								</div>
 								<div class="features__item">
-									<p class="features__item__text">Экономия средств и времени Вашейкомпании</p>
+									<p class="features__item__text">Экономия средств и времени вашей компании</p>
 								</div>
 								<div class="features__item">
 									<p class="features__item__text">Замена сотрудника в течение 2 недель</p>
@@ -175,19 +178,19 @@
 										Контакты:
 										<div class="contacts__data__person">
 											Иванов Иван:
-											<a class="contacts__info__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
+											<a class="contacts__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
 										</div>
 										<div class="contacts__data__person">
 											Иванов Иван:
-											<a class="contacts__info__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
+											<a class="contacts__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
 										</div>
 										<div class="contacts__data__person">
 											Иванов Иван:
-											<a class="contacts__info__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
+											<a class="contacts__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
 										</div>
 										<div class="contacts__data__person">
 											Почта:
-											<a class="contacts__info__data__link" href="mailto:tempmail@mail.ru">tempmail@mail.ru</a>
+											<a class="contacts__data__link" href="mailto:tempmail@mail.ru">tempmail@mail.ru</a>
 										</div>
 									</div>
 								</div>

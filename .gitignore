@@ -4,6 +4,3 @@ package.json
 gulpfile.js
 
 .DS_Store
-
-app/
-src/
