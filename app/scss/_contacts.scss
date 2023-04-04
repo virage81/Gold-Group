@@ -5,6 +5,7 @@
 	background-position: top 80px left, top 80px right, bottom 80px left, bottom 80px center, bottom 80px right;
 	background-repeat: no-repeat;
 	background-size: 170px 160px, 250px 240px, 140px 140px, 250px 70px, 210px 190px;
+
 	&__inner {
 		display: flex;
 		justify-content: center;
@@ -22,6 +23,7 @@
 		align-items: center;
 
 		width: 100%;
+		max-height: 600px;
 		height: 100%;
 	}
 
