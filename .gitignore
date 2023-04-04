@@ -1,5 +1,6 @@
 node_modules
 package-lock.json
+<<<<<<< HEAD
 package.json
 gulpfile.js
 
@@ -7,3 +8,8 @@ gulpfile.js
 
 app/
 src/
+=======
+.DS_Store
+
+docs/
+>>>>>>> dev
