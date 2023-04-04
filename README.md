@@ -8,7 +8,9 @@
 
 ## Phase:
 
-Planning project
+Correcting project
+
+--> https://virage81.github.io/Gold-Group <--
 
 ## What've to do:
 
@@ -25,6 +27,12 @@ Planning project
 - Anastasya Ushakova
 
 ## Русский
+
+## Стадия
+
+Корректировки проекта
+
+--> https://virage81.github.io/Gold-Group <--
 
 ## Что должно быть:
 
