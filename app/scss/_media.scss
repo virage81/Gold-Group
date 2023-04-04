@@ -25,6 +25,7 @@
 @media (max-width: 1150px) {
 	.title {
 		font-size: 58px;
+		padding-top: 10px;
 		padding-bottom: 35px;
 	}
 
@@ -102,6 +103,7 @@
 	.contacts__inner {
 		padding-top: 60px;
 	}
+
 	.header {
 		height: 60px;
 
@@ -135,7 +137,7 @@
 				display: block;
 
 				position: absolute;
-				top: 305px;
+				top: 355px;
 				left: 0;
 				right: 0;
 				bottom: 0;
@@ -166,10 +168,14 @@
 				}
 			}
 
-			&__link {
-				padding: 3px;
+			.header__link {
+				padding: 5px;
 
 				display: inline-block;
+
+				&::after {
+					display: none;
+				}
 			}
 
 			&.header__nav--show {
@@ -216,7 +222,7 @@
 		background-size: 120px 120px, 140px 150px, 80px 120px, 200px 70px, 130px 140px;
 
 		&__inner {
-			height: calc(100vh - 60px);
+			padding-bottom: 60px;
 		}
 
 		&__info {
@@ -284,7 +290,7 @@
 	.features {
 		&__content {
 			grid-template-columns: 1fr;
-			justify-items: center;
+			justify-self: center;
 
 			gap: 15px;
 		}
@@ -292,7 +298,7 @@
 		&__item {
 			padding-top: 30px;
 
-			width: fit-content;
+			width: 100%;
 
 			&:nth-child(1) {
 				background-size: 40px;
@@ -315,8 +321,7 @@
 
 			&__text {
 				font-size: 20px;
-
-				display: inline-block;
+				text-align: center;
 			}
 		}
 	}

@@ -69,13 +69,31 @@
 			align-items: center;
 
 			padding-top: 10px;
+		}
 
-			a {
-				color: #fff;
+		&__link {
+			color: #fff;
 
-				&:hover,
-				&:focus {
-					text-decoration: underline;
+			&::after {
+				display: block;
+				content: "";
+
+				position: relative;
+				bottom: -2px;
+				left: 0;
+				right: 0;
+
+				background-color: #fff;
+
+				width: 0;
+				height: 2px;
+
+				transition: all 0.2s ease-in-out;
+			}
+
+			&:hover {
+				&::after {
+					width: 100%;
 				}
 			}
 		}

@@ -30,8 +30,9 @@
 	}
 
 	&__button {
-		border: none;
+		outline: none;
 		border-radius: 10px;
+		border: 2px solid transparent;
 
 		padding: 20px 60px;
 
@@ -42,6 +43,13 @@
 			family: "Montserrat";
 			size: 24px;
 		}
+
 		cursor: pointer;
+
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			border-color: #bfbfbf;
+		}
 	}
 }

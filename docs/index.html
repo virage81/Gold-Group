@@ -1,67 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/style.min.css" />
+		<script src="https://api-maps.yandex.ru/2.1/?apikey=0347708c-4ef7-4e61-b97f-6d44ebe5052b&lang=ru_RU" type="text/javascript"></script>
 		<title>Gold Group</title>
 	</head>
 	<body>
-		<div class="popup">
-			<form action="#" class="popup__form">
-				<label class="popup__form__label">
-					Фамилия*
-					<input type="text" name="last name" placeholder="Иванов" required class="popup__form__input" />
-				</label>
-				<label class="popup__form__label">
-					Имя*
-					<input type="text" name="name" placeholder="Иван" required class="popup__form__input" />
-				</label>
-				<label class="popup__form__label">
-					Отчество
-					<input type="text" name="surname" placeholder="Иванович" required class="popup__form__input" />
-				</label>
-				<label class="popup__form__label">
-					Номер телефона*
-					<input
-						type="tel"
-						placeholder="+7 999 999-99-99"
-						id="phone"
-						name="phone"
-						pattern="+7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}"
-						class="popup__form__input"
-						required
-					/>
-				</label>
-				<p class="popup__form__text">* Поля, обязательные для заполнения</p>
-				<p class="popup__form__text">Нажимая на кнопку, вы даете своё согласние на персональную обработку данных</p>
-				<button type="submit" id="submitBtn" class="popup__form__button">Отправить заявку</button>
-			</form>
+		<div class="popup__container">
+			<div class="popup">
+				<form action="#" class="popup__form">
+					<label class="popup__form__label">
+						Фамилия*
+						<input type="text" name="last name" placeholder="Иванов" required class="popup__form__input" />
+					</label>
+					<label class="popup__form__label">
+						Имя*
+						<input type="text" name="name" placeholder="Иван" required class="popup__form__input" />
+					</label>
+					<label class="popup__form__label">
+						Отчество
+						<input type="text" name="surname" placeholder="Иванович" required class="popup__form__input" />
+					</label>
+					<label class="popup__form__label">
+						Номер телефона*
+						<input
+							type="tel"
+							placeholder="+7 999 999-99-99"
+							id="phone"
+							name="phone"
+							pattern="+7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}"
+							class="popup__form__input"
+							required
+						/>
+					</label>
+					<p class="popup__form__text">* Поля, обязательные для заполнения</p>
+					<p class="popup__form__text">Нажимая на кнопку, вы даете своё согласние на персональную обработку данных</p>
+					<button type="submit" id="submitBtn" class="popup__form__button">Отправить заявку</button>
+				</form>
+			</div>
 		</div>
 		<header class="header">
 			<div class="container">
 				<div class="header__inner">
-					<a class="header__logo" href="#main">Gold Group</a>
+					<a class="header__logo" data-hash="#main" href="#main">Gold Group</a>
 					<nav class="header__nav">
 						<ul class="header__list">
 							<li class="header__list-item">
-								<a class="header__link" href="#main">Главная</a>
+								<a class="header__link" data-hash="#main" href="#main">Главная</a>
 							</li>
 							<li class="header__list-item">
-								<a class="header__link" href="#about">О нас</a>
+								<a class="header__link" data-hash="#about" href="#about">О нас</a>
 							</li>
 							<li class="header__list-item">
-								<a class="header__link" href="#features">Преимущества</a>
+								<a class="header__link" data-hash="#features" href="#features">Преимущества</a>
 							</li>
 							<li class="header__list-item">
-								<a class="header__link" href="#form">Оставить заявку</a>
+								<a class="header__link" data-hash="#form" href="#form">Оставить заявку</a>
 							</li>
 							<li class="header__list-item">
-								<a class="header__link" href="#contacts">Контакты</a>
+								<a class="header__link" data-hash="#contact" href="#contacts">Контакты</a>
 							</li>
 						</ul>
 					</nav>
+					<button class="header__button" id="header-button">
+						<span class="header__button__span"></span>
+					</button>
 				</div>
 			</div>
 		</header>
@@ -72,7 +78,7 @@
 						<div class="top__inner">
 							<h1 class="top__title title">GOLD GROUP</h1>
 							<p class="top__subtitle">Предоставление персонала</p>
-							<button class="top__button">Оставить заявку</button>
+							<button class="top__button" id="form-button">Оставить заявку</button>
 						</div>
 					</div>
 				</section>
@@ -99,7 +105,7 @@
 									<p class="features__item__text">Опертивный подбор кадров</p>
 								</div>
 								<div class="features__item">
-									<p class="features__item__text">Экономия средств и времени Вашейкомпании</p>
+									<p class="features__item__text">Экономия средств и времени вашей компании</p>
 								</div>
 								<div class="features__item">
 									<p class="features__item__text">Замена сотрудника в течение 2 недель</p>
@@ -162,9 +168,7 @@
 						<div class="contacts__inner">
 							<h4 class="contacts__title title">Контакты</h4>
 							<div class="contacts__info">
-								<div class="contacts__map" id="map">
-									<img src="img/decor/Map.png" />
-								</div>
+								<div class="contacts__map" id="map"></div>
 								<div class="contacts__box">
 									<div class="contacts__address">
 										Адрес:
@@ -174,19 +178,19 @@
 										Контакты:
 										<div class="contacts__data__person">
 											Иванов Иван:
-											<a class="contacts__info__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
+											<a class="contacts__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
 										</div>
 										<div class="contacts__data__person">
 											Иванов Иван:
-											<a class="contacts__info__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
+											<a class="contacts__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
 										</div>
 										<div class="contacts__data__person">
 											Иванов Иван:
-											<a class="contacts__info__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
+											<a class="contacts__data__link" href="tel:+79999999999">+7 999 999-99-99</a>
 										</div>
 										<div class="contacts__data__person">
 											Почта:
-											<a class="contacts__info__data__link" href="mailto:tempmail@mail.ru">tempmail@mail.ru</a>
+											<a class="contacts__data__link" href="mailto:tempmail@mail.ru">tempmail@mail.ru</a>
 										</div>
 									</div>
 								</div>

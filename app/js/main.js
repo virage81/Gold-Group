@@ -1,10 +1,10 @@
 // swiper slider
-let slider = document.querySelector(".slider");
-let topButton = document.querySelector("#form-button");
-let popup = document.querySelector(".popup__container");
-let headerBtn = document.querySelector("#header-button");
-let headerNav = document.querySelector(".header__nav");
-let headerLinks = document.querySelectorAll(".header__link");
+let slider = document.querySelector(".slider"),
+	topButton = document.querySelector("#form-button"),
+	popup = document.querySelector(".popup__container"),
+	headerBtn = document.querySelector("#header-button"),
+	headerNav = document.querySelector(".header__nav"),
+	headerLinks = document.querySelectorAll(".header__link, .header__logo");
 
 let swiper = new Swiper(slider, {
 	direction: "vertical",
@@ -26,11 +26,14 @@ let swiper = new Swiper(slider, {
 });
 
 // если курсор на карте, слайдер отключается
-addEventListener("mouseover", (e) => {
-	if (e.target.className == "ymaps-2-1-79-events-pane ymaps-2-1-79-user-selection-none") {
+addEventListener("mouseover", (e) => turnMapOff(e));
+addEventListener("touchstart", (e) => turnMapOff(e));
+
+function turnMapOff(evt) {
+	if (evt.target.className == "ymaps-2-1-79-events-pane ymaps-2-1-79-user-selection-none") {
 		swiper.enabled = false;
 	} else swiper.enabled = true;
-});
+}
 
 // отображение модального окна
 topButton.addEventListener("click", () => {
