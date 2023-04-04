@@ -2,6 +2,8 @@
 let slider = document.querySelector(".slider");
 let topButton = document.querySelector("#form-button");
 let popup = document.querySelector(".popup__container");
+let headerBtn = document.querySelector("#header-button");
+let headerNav = document.querySelector(".header__nav");
 
 let swiper = new Swiper(slider, {
 	direction: "vertical",
@@ -31,11 +33,16 @@ addEventListener("mouseover", (e) => {
 
 // отображение модального окна
 topButton.addEventListener("click", () => {
-	popup.classList.add("show");
+	popup.classList.add("popup--show");
 });
 
 window.addEventListener("click", function (e) {
-	if (e.target == popup) popup.classList.remove("show");
+	if (e.target == popup) popup.classList.remove("popup--show");
+});
+
+// Переключение навигации в header
+headerBtn.addEventListener("click", (e) => {
+	headerNav.classList.contains("header__nav--show") ? headerNav.classList.remove("header__nav--show") : headerNav.classList.add("header__nav--show");
 });
 
 // yandex map

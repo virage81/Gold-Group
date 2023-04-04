@@ -1,0 +1,155 @@
+@media (max-width: 1150px) {
+	.title {
+		font-size: 58px;
+		padding-bottom: 35px;
+	}
+
+	.header {
+		&__logo {
+			font-size: 26px;
+			padding-right: 100px;
+		}
+
+		&__list-item {
+			padding: 0 15px;
+		}
+
+		&__link {
+			font-size: 16px;
+		}
+	}
+
+	.top {
+		background-position: top 40px left, top 70px center, top 80px right, top 260px right, bottom right, bottom left, bottom center;
+		background-size: 90px 200px, 230px 80px, 120px 130px, 40px 60px, 100px 90px, 90px 80px, 320px 60px;
+		&__title {
+			padding-bottom: 15px;
+		}
+
+		&__subtitle {
+			padding-bottom: 50px;
+			font-size: 28px;
+		}
+
+		&__button {
+			padding: 15px 50px;
+			font-size: 20px;
+		}
+	}
+
+	.features {
+		&__content {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.header {
+		height: 60px;
+
+		&__logo {
+			padding-right: 0;
+		}
+
+		&__inner {
+			height: 60px;
+			justify-content: space-between;
+		}
+
+		&__nav {
+			transform: translateY(-200%);
+			visibility: hidden;
+			display: block;
+
+			position: absolute;
+			top: 60px;
+			left: 0;
+			right: 0;
+
+			padding-top: 20px;
+
+			background-color: $accent-color;
+
+			z-index: 9;
+
+			&::before {
+				content: "";
+				display: block;
+
+				position: absolute;
+				top: 305px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+
+				backdrop-filter: blur(0px);
+
+				width: 100vw;
+				height: 100vh;
+				z-index: -1;
+
+				transition: all 0.2s ease-in-out;
+				transition-delay: 0.2s;
+			}
+
+			.header__list {
+				flex-direction: column;
+				align-items: center;
+
+				&-item {
+					padding: 20px 0;
+					width: 100%;
+
+					text-align: center;
+				}
+
+				&-item {
+					border-bottom: 1px solid $default-color;
+				}
+			}
+
+			&__link {
+				padding: 3px;
+
+				display: inline-block;
+			}
+
+			&.header__nav--show {
+				transform: translateY(0);
+				visibility: visible;
+
+				&::before {
+					backdrop-filter: blur(20px);
+				}
+			}
+		}
+
+		&__list {
+			flex-direction: column;
+		}
+
+		&__button {
+			display: block;
+		}
+	}
+
+	.top {
+		background-position: top 30px left, top 60px center, top 50px right, top 260px right, bottom right, bottom left, bottom center;
+		background-size: 90px 200px, 230px 80px, 120px 130px, 40px 60px, 100px 90px, 90px 80px, 320px 60px;
+	}
+
+	.footer {
+		height: 60px;
+
+		&__inner {
+			height: 60px;
+		}
+	}
+}
+
+@media (max-width: 750px) {
+	.body {
+	}
+}
