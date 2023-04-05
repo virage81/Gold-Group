@@ -1,10 +1,37 @@
 @media (max-width: 1600px) {
 	.about {
 		background-size: 180px 150px, 260px 80px, 150px 210px, 90px 280px, 80px 110px, 210px 60px;
+
+		&__info {
+			background-position: left 50px center;
+			background-size: 380px 370px;
+		}
 	}
 
 	.features {
 		background-size: 250px 80px, 140px 110px, 160px 180px, 140px 170px;
+	}
+}
+
+@media only screen and (max-width: 1500px) {
+	.title {
+		padding-top: 20px;
+		font-size: 52px;
+	}
+
+	.popup {
+		padding: 20px 50px;
+
+		&__form {
+			&__label {
+				font-size: 20px;
+			}
+
+			&__input {
+				padding: 3px 7px;
+				font-size: 18px;
+			}
+		}
 	}
 }
 
@@ -24,8 +51,6 @@
 
 @media (max-width: 1150px) {
 	.title {
-		font-size: 58px;
-		padding-top: 10px;
 		padding-bottom: 35px;
 	}
 
