@@ -248,6 +248,7 @@
 
 		&__inner {
 			padding-bottom: 60px;
+			height: calc(100vh - 60px);
 		}
 
 		&__info {
@@ -256,6 +257,7 @@
 
 		&__map {
 			width: 100%;
+			min-height: 100px;
 		}
 
 		&__box {
@@ -423,9 +425,27 @@
 	}
 
 	.contacts {
-		background-size: 90px 90px, 110px 110px, 40px 70px, 110px 40px, 60px 70px;
+		background-size: 60px 60px, 60px 60px, 30px 40px, 80px 30px, 40px 40px;
+
 		&__box {
-			font-size: 18px;
+			font-size: 14px;
+
+			// flex-direction: row;
+		}
+
+		&__address {
+			// padding-right: 10px;
+			padding-bottom: 10px;
+
+			address {
+				// line-height: 1.3;
+			}
+		}
+	}
+
+	.footer {
+		&__link {
+			font-size: 12px;
 		}
 	}
 }
