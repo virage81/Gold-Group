@@ -1,0 +1,52 @@
+.top {
+	background-image: url(../img/top-slide/top-slide-01.png), url(../img/top-slide/top-slide-02.png), url(../img/top-slide/top-slide-03.png),
+		url(../img/top-slide/top-slide-04.png), url(../img/top-slide/top-slide-05.png), url(../img/top-slide/top-slide-06.png),
+		url(../img/top-slide/top-slide-07.png);
+	background-position: top left, top center, top right, center right, bottom right, bottom left, bottom center;
+	background-repeat: no-repeat;
+	background-size: 220px 430px, 460px 190px, 210px 300px, 90px 120px, 220px 170px, 170px 190px, 680px 150px;
+
+	padding-top: 60px;
+
+	&__inner {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__title {
+		padding-bottom: 20px;
+	}
+
+	&__subtitle {
+		color: #fff;
+		font-family: "Spectral", sans-serif;
+		font-size: 36px;
+
+		padding-bottom: 60px;
+	}
+
+	&__button {
+		outline: none;
+		border-radius: 10px;
+		border: 2px solid transparent;
+
+		padding: 20px 60px;
+
+		background-color: $accent-color;
+		color: $default-color;
+
+		font-family: "Montserrat", sans-serif;
+		font-size: 24px;
+
+		cursor: pointer;
+
+		transition: all 0.2s ease-in-out;
+
+		&:hover {
+			border-color: #bfbfbf;
+		}
+	}
+}

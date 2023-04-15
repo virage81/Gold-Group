@@ -19,7 +19,7 @@ function browsersync() {
 
 function styles() {
 	return src("app/scss/style.scss")
-		.pipe(scss({ outputStyle: "compressed" }))
+		.pipe(scss({ outputStyle: "expanded" }))
 		.pipe(concat("style.min.css"))
 		.pipe(
 			autoprefixer({
@@ -47,15 +47,15 @@ function images() {
 				}),
 			])
 		)
-		.pipe(dest("dist/img"));
+		.pipe(dest("docs/img"));
 }
 
 function build() {
-	return src(["app/**/*.html", "app/css/style.min.css", "app/js/main.min.js"], { base: "app" }).pipe(dest("dist/"));
+	return src(["app/**/*.html", "app/css/style.min.css", "app/js/main.min.js"], { base: "app" }).pipe(dest("docs/"));
 }
 
 function cleanDist() {
-	return del("dist/");
+	return del("docs/");
 }
 
 function watching() {
