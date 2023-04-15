@@ -6,6 +6,17 @@ let topButton = document.querySelector("#form-button"),
 	headerLinks = document.querySelectorAll(".header__link, .header__logo"),
 	phone_inputs = document.querySelectorAll("#phone");
 
+// отображение модального окна
+topButton.addEventListener("click", () => {
+	popup.classList.add("popup--show");
+	document.querySelector("body").style.overflow = "hidden";
+});
+
+window.addEventListener("click", function (e) {
+	if (e.target == popup) popup.classList.remove("popup--show");
+	document.querySelector("body").style.overflow = "visible";
+});
+
 // Маска номера телефона
 var eventCalllback = function (e) {
 	console.log(e);
@@ -33,18 +44,6 @@ for (let elem of phone_inputs) {
 		elem.addEventListener(ev, eventCalllback);
 	}
 }
-
-// отображение модального окна
-topButton.addEventListener("click", () => {
-	popup.classList.add("popup--show");
-});
-
-window.addEventListener("click", function (e) {
-	if (e.target == popup) popup.classList.remove("popup--show");
-});
-window.addEventListener("touch", function (e) {
-	if (e.target == popup) popup.classList.remove("popup--show");
-});
 
 // Переключение навигации в header
 headerBtn.addEventListener("click", (e) => {
