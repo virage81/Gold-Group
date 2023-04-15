@@ -1,6 +1,6 @@
 html,
 body {
-	height: 100%;
+	min-height: 100vh;
 }
 
 body {
@@ -98,7 +98,7 @@ body {
 
 		&__label {
 			font: {
-				family: "Spectral";
+				family: "Spectral", sans-serif;
 				size: 24px;
 			}
 
@@ -136,7 +136,7 @@ body {
 
 		&__text {
 			font: {
-				family: "Spectral";
+				family: "Spectral", sans-serif;
 				size: 14px;
 			}
 			opacity: 0.7;
@@ -156,6 +156,7 @@ body {
 
 			padding: 12px 0;
 
+			font-family: "Montserrat", sans-serif;
 			font-size: 24px;
 			cursor: pointer;
 
