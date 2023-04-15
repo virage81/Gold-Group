@@ -1,13 +1,26 @@
 html,
 body {
-	min-height: 100vh;
+	height: 100%;
 }
 
 body {
 	@include default-text;
 	line-height: 1;
 	background-color: #232323;
-	overflow: hidden;
+}
+
+.top,
+.about,
+.features,
+.form {
+	height: 100vh;
+}
+
+.contacts {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .top__inner,
@@ -15,7 +28,7 @@ body {
 .features__inner,
 .form__inner,
 .contacts__inner {
-	padding-top: 80px;
+	min-height: 100vh;
 }
 
 .container {
@@ -31,13 +44,6 @@ body {
 	text-transform: uppercase;
 
 	padding-bottom: 50px;
-}
-
-//slider
-.swiper-wrapper {
-	height: 100vh;
-
-	overflow: visible;
 }
 
 //popup
@@ -156,7 +162,7 @@ body {
 
 			padding: 12px 0;
 
-			font-family: "Montserrat", sans-serif;
+			font-family: "Arial", sans-serif;
 			font-size: 24px;
 			cursor: pointer;
 

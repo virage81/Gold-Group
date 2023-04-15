@@ -1,29 +1,10 @@
 // swiper slider
-let slider = document.querySelector(".slider"),
-	topButton = document.querySelector("#form-button"),
+let topButton = document.querySelector("#form-button"),
 	popup = document.querySelector(".popup__container"),
 	headerBtn = document.querySelector("#header-button"),
 	headerNav = document.querySelector(".header__nav"),
-	headerLinks = document.querySelectorAll(".header__link, .header__logo");
-
-let swiper = new Swiper(slider, {
-	direction: "vertical",
-	slidesPerView: 1,
-	hashNavigation: {
-		watchState: true,
-	},
-
-	effect: "fade",
-	fadeEffect: {
-		crossFade: true,
-	},
-
-	keyboard: {
-		enabled: true,
-		pageUpDown: true,
-	},
-	mousewheel: true,
-});
+	headerLinks = document.querySelectorAll(".header__link, .header__logo"),
+	phone_inputs = document.querySelectorAll("#phone");
 
 // Маска номера телефона
 var eventCalllback = function (e) {
@@ -47,21 +28,10 @@ var eventCalllback = function (e) {
 		return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
 	});
 };
-var phone_inputs = document.querySelectorAll("#phone");
 for (let elem of phone_inputs) {
 	for (let ev of ["input", "blur", "focus"]) {
 		elem.addEventListener(ev, eventCalllback);
 	}
-}
-
-// если курсор на карте, слайдер отключается
-addEventListener("mouseover", (e) => turnMapOff(e));
-addEventListener("touchstart", (e) => turnMapOff(e));
-
-function turnMapOff(evt) {
-	if (evt.target.className == "ymaps-2-1-79-events-pane ymaps-2-1-79-user-selection-none") {
-		swiper.enabled = false;
-	} else swiper.enabled = true;
 }
 
 // отображение модального окна
@@ -70,6 +40,9 @@ topButton.addEventListener("click", () => {
 });
 
 window.addEventListener("click", function (e) {
+	if (e.target == popup) popup.classList.remove("popup--show");
+});
+window.addEventListener("touch", function (e) {
 	if (e.target == popup) popup.classList.remove("popup--show");
 });
 
