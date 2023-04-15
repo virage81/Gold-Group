@@ -9,15 +9,7 @@ body {
 	background-color: #232323;
 }
 
-.top,
-.about,
-.features,
-.form {
-	height: 100vh;
-}
-
 .contacts {
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -28,7 +20,8 @@ body {
 .features__inner,
 .form__inner,
 .contacts__inner {
-	min-height: 100vh;
+	height: 100vh;
+	padding-top: 80px;
 }
 
 .container {

@@ -70,7 +70,7 @@
 	}
 
 	.top {
-		background-position: top 40px left, top 70px center, top 80px right, top 260px right, bottom right, bottom left, bottom center;
+		background-position: top left, top center, top right, center right, bottom right, bottom left, bottom center;
 		background-size: 90px 200px, 230px 80px, 120px 130px, 40px 60px, 100px 90px, 90px 80px, 320px 60px;
 		&__title {
 			padding-bottom: 15px;
@@ -88,7 +88,7 @@
 	}
 
 	.features {
-		background-position: top 80px left, top 80px right, bottom right, bottom left;
+		background-position: top left, top right, bottom right, bottom left;
 		background-size: 200px 80px, 110px 110px, 110px 120px, 110px 100px;
 		&__content {
 			grid-template-columns: repeat(2, 1fr);
@@ -121,14 +121,6 @@
 }
 
 @media only screen and (max-width: 900px) {
-	.top__inner,
-	.about__inner,
-	.features__inner,
-	.form__inner,
-	.contacts__inner {
-		padding-top: 60px;
-	}
-
 	.header {
 		height: 60px;
 
@@ -222,33 +214,40 @@
 		}
 	}
 
+	.top__inner,
+	.about__inner,
+	.features__inner,
+	.form__inner,
+	.contacts__inner {
+		padding-top: 60px;
+	}
+
 	.top {
-		background-position: top 30px left, top 60px center, top 50px right, top 260px right, bottom right, bottom left, bottom center;
+		background-position: top left, top center, top right, top right, bottom right, bottom left, bottom center;
 		background-size: 90px 200px, 230px 80px, 120px 130px, 40px 60px, 100px 90px, 90px 80px, 320px 60px;
 	}
 
 	.about {
-		background-position: top 60px left, top 60px center, top 60px right, bottom right, bottom left, bottom center;
+		background-position: top left, top center, top right, bottom right, bottom left, bottom center;
 		background-size: 150px 120px, 230px 60px, 110px 160px, 70px 220px, 70px 80px, 170px 50px;
 	}
 
 	.features {
-		background-position: top 60px left, top 60px right, bottom right, bottom left;
+		background-position: top left, top right, bottom right, bottom left;
 		background-size: 200px 80px, 110px 110px, 110px 120px, 110px 100px;
 	}
 
 	.form {
-		background-position: top 60px left, top 60px center, top 60px right, bottom left, bottom center, bottom right;
+		background-position: top left, top center, top right, bottom left, bottom center, bottom right;
 		background-size: 120px 90px, 240px 70px, 140px 160px, 100px 100px, 140px 40px, 70px 230px;
 	}
 
 	.contacts {
-		background-position: top 60px left, top 60px right, bottom 60px left, bottom 60px center, bottom 60px right;
+		background-position: top left, top right, bottom 60px left, bottom 60px center, bottom 60px right;
 		background-size: 120px 120px, 140px 150px, 80px 120px, 200px 70px, 130px 140px;
 
 		&__inner {
-			padding-bottom: 60px;
-			height: calc(100vh - 60px);
+			padding: 80px 0 30px;
 		}
 
 		&__info {
@@ -286,6 +285,7 @@
 	.title {
 		font-size: 44px;
 	}
+
 	.top {
 		background-size: 90px 160px, 160px 50px, 90px 90px, 30px 50px, 70px 70px, 70px 70px, 240px 50px;
 
@@ -429,17 +429,10 @@
 
 		&__box {
 			font-size: 14px;
-
-			// flex-direction: row;
 		}
 
 		&__address {
-			// padding-right: 10px;
 			padding-bottom: 10px;
-
-			address {
-				// line-height: 1.3;
-			}
 		}
 	}
 
