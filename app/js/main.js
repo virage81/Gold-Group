@@ -46,7 +46,6 @@ events.forEach((elem) => {
 
 // Маска номера телефона
 var eventCalllback = function (e) {
-	console.log(e);
 	var el = e.target,
 		clearVal = el.dataset.phoneClear,
 		pattern = el.dataset.phonePattern,
