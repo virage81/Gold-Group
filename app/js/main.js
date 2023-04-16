@@ -10,8 +10,6 @@ let topButton = document.querySelector("#top-button"),
 // отображение модального окна
 topButton.addEventListener("click", () => {
 	popup.classList.add("popup--show");
-	body.style.overflowY = "hidden";
-	body.style.position = "fixed";
 });
 
 let events = ["click", "touchstart"];
@@ -20,8 +18,6 @@ events.forEach((elem) => {
 	window.addEventListener(elem, function (e) {
 		if (e.target == popup) {
 			popup.classList.remove("popup--show");
-			body.style.overflowY = "visible";
-			body.style.position = "static";
 		}
 	});
 });
