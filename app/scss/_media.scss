@@ -1,0 +1,471 @@
+@media only screen and (max-width: 1600px) {
+	.about {
+		background-size: 180px 150px, 260px 80px, 150px 210px, 90px 280px, 80px 110px, 210px 60px;
+	}
+
+	.features {
+		background-size: 250px 80px, 140px 110px, 160px 180px, 140px 170px;
+	}
+}
+
+@media only screen and (max-width: 1500px) {
+	.title {
+		font-size: 52px;
+	}
+
+	.popup {
+		padding: 20px 50px;
+
+		&__form {
+			&__label {
+				font-size: 20px;
+			}
+
+			&__input {
+				padding: 3px 7px;
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.about {
+		&__text {
+			line-height: 1.3;
+			font-size: 24px;
+		}
+	}
+}
+
+@media only screen and (max-width: 1150px) {
+	.header {
+		&__logo {
+			font-size: 26px;
+		}
+
+		&__nav__link {
+			display: inline-block;
+			padding: 0 15px;
+			font-size: 16px;
+		}
+	}
+
+	.top {
+		background-position: top 60px left, top 60px center, top 60px right, center right, bottom right, bottom left, bottom center;
+		background-size: 90px 200px, 230px 80px, 120px 130px, 40px 60px, 100px 90px, 90px 80px, 320px 60px;
+
+		&__title {
+			font-size: 72px;
+			padding-bottom: 15px;
+		}
+
+		&__subtitle {
+			padding-bottom: 50px;
+			font-size: 28px;
+		}
+
+		&__button {
+			padding: 15px 50px;
+			font-size: 20px;
+		}
+	}
+
+	.features {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 200px 80px, 110px 110px, 110px 120px, 110px 100px;
+
+		&__content {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, 1fr);
+		}
+
+		&__item__text {
+			font-size: 24px;
+		}
+	}
+}
+
+@media only screen and (max-width: 1050px) {
+	.about {
+		&__img {
+			display: none;
+		}
+
+		&__text {
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
+
+	.form {
+		background-size: 120px 90px, 240px 70px, 140px 160px, 100px 100px, 140px 40px, 70px 230px;
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.header {
+		&__nav {
+			transform: translateY(-200%);
+			visibility: hidden;
+			display: block;
+
+			position: absolute;
+			top: 60px;
+			left: 0;
+			right: 0;
+			z-index: 9;
+
+			padding-top: 20px;
+
+			background-color: $accent-color;
+
+			transition: all 0.2s ease-in-out;
+
+			&::before {
+				content: "";
+				display: block;
+
+				position: absolute;
+				top: 355px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+
+				backdrop-filter: blur(0px);
+
+				width: 100vw;
+				height: 100vh;
+				z-index: -1;
+
+				transition: all 0.2s ease-in-out;
+				transition-delay: 0.2s;
+			}
+
+			&__list {
+				flex-direction: column;
+				align-items: center;
+			}
+
+			&__item {
+				padding: 20px 0;
+				width: 100%;
+
+				text-align: center;
+				border-bottom: 1px solid $default-color;
+			}
+
+			&__link {
+				padding: 5px;
+
+				display: inline-block;
+
+				&::after {
+					display: none;
+				}
+			}
+
+			&.header__nav--show {
+				transform: translateY(0);
+				visibility: visible;
+
+				&::before {
+					backdrop-filter: blur(20px);
+				}
+			}
+		}
+
+		&__list {
+			flex-direction: column;
+		}
+
+		&__button {
+			display: block;
+		}
+	}
+
+	.top {
+		background-position: top 60px left, top 60px center, top 60px right, center right, bottom right, bottom left, bottom center;
+		background-size: 90px 200px, 230px 80px, 120px 130px, 40px 60px, 100px 90px, 90px 80px, 320px 60px;
+	}
+
+	.about {
+		background-position: top left, top center, top right, bottom right, bottom left, bottom center;
+		background-size: 150px 120px, 230px 60px, 110px 160px, 70px 220px, 70px 80px, 170px 50px;
+	}
+
+	.features {
+		background-position: top left, top right, bottom right, bottom left;
+		background-size: 200px 80px, 110px 110px, 110px 120px, 110px 100px;
+	}
+
+	.form {
+		background-position: top left, top center, top right, bottom left, bottom center, bottom right;
+		background-size: 120px 90px, 240px 70px, 140px 160px, 100px 100px, 140px 40px, 70px 230px;
+	}
+
+	.contacts {
+		background-position: top left, top right, bottom left, bottom center, bottom right;
+		background-size: 120px 120px, 140px 150px, 80px 120px, 200px 70px, 130px 140px;
+
+		height: calc(100vh - 120px);
+		padding-top: 0;
+
+		&__inner {
+			padding: 80px 0 30px;
+		}
+
+		&__info {
+			flex-direction: column;
+		}
+
+		&__map {
+			width: 100%;
+			min-height: 100px;
+		}
+
+		&__box {
+			padding-top: 15px;
+			padding-left: 0;
+
+			max-width: 100%;
+		}
+
+		&__data {
+			width: 100%;
+			justify-content: space-between;
+		}
+	}
+}
+
+@media only screen and (max-width: 750px) {
+	.title {
+		font-size: 44px;
+	}
+
+	.top {
+		background-size: 90px 160px, 160px 50px, 90px 90px, 30px 50px, 70px 70px, 70px 70px, 240px 50px;
+
+		&__subtitle {
+			font-size: 20px;
+		}
+
+		&__button {
+			padding: 15px 40px;
+		}
+	}
+
+	.about {
+		background-size: 110px 90px, 180px 50px, 90px 140px, 60px 180px, 60px 60px, 130px 30px;
+
+		&__text {
+			font-size: 20px;
+		}
+	}
+
+	.features {
+		&__content {
+			gap: 10px;
+		}
+	}
+
+	.contacts {
+		&__content {
+			flex-direction: column;
+		}
+
+		&__info {
+			padding-top: 30px;
+		}
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	.features {
+		&__content {
+			grid-template-columns: 1fr;
+
+			gap: 15px 0;
+		}
+
+		&__item {
+			display: flex;
+			align-items: center;
+
+			padding-left: 0;
+			padding-top: 0;
+
+			&::before {
+				min-width: 30px;
+				width: 10px;
+				height: 30px;
+
+				left: 0;
+			}
+
+			&:nth-child(1)::before {
+				background: url(../img/features-slide/teamwork_1.png) center left/30px no-repeat;
+			}
+
+			&:nth-child(2)::before {
+				background: url(../img/features-slide/clock.png) center left/30px no-repeat;
+			}
+
+			&:nth-child(3)::before {
+				background: url(../img/features-slide/teamwork_2.png) center left/30px no-repeat;
+			}
+
+			&:nth-child(4)::before {
+				background: url(../img/features-slide/plan.png) center left/30px no-repeat;
+			}
+
+			&:nth-child(5)::before {
+				background: url(../img/features-slide/phone.png) center left/30px no-repeat;
+			}
+
+			&:nth-child(6)::before {
+				background: url(../img/features-slide/mark.png) center left/27px no-repeat;
+				height: 36px;
+			}
+
+			&__text {
+				padding-left: 20px;
+				font-size: 20px;
+				text-align: left;
+
+				line-height: 1.3;
+			}
+		}
+	}
+
+	.form {
+		background-size: 120px 90px, 170px 50px, 90px 110px, 80px 80px, 110px 40px, 70px 190px;
+	}
+
+	.popup {
+		padding: 50px;
+	}
+
+	.contacts {
+		background-size: 90px 90px, 110px 110px, 60px 80px, 150px 50px, 90px 100px;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.footer {
+		&__link {
+			font-size: 16px;
+		}
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.title {
+		font-size: 32px;
+	}
+
+	.top {
+		background-size: 60px 110px, 100px 40px, 70px 80px, 20px 30px, 50px 50px, 50px 60px, 150px 40px;
+
+		&__title {
+			font-size: 42px;
+		}
+
+		&__subtitle {
+			font-size: 18px;
+			padding-bottom: 30px;
+		}
+
+		&__button {
+			font-size: 16px;
+		}
+	}
+
+	.about {
+		background-size: 70px 60px, 130px 40px, 60px 130px, 40px 160px, 50px 50px, 110px 30px;
+	}
+
+	.features {
+		background-size: 120px 40px, 60px 60px, 70px 70px, 60px 60px;
+	}
+
+	.form {
+		background-size: 70px 70px, 130px 40px, 70px 90px, 50px 50px, 90px 30px, 50px 170px;
+	}
+
+	.popup {
+		&__form {
+			&__label {
+				font-size: 20px;
+			}
+
+			&__input {
+				font-size: 20px;
+			}
+
+			&__text {
+				font-size: 10px;
+			}
+
+			&__button {
+				font-size: 20px;
+				padding: 10px;
+			}
+		}
+	}
+
+	.contacts {
+		background-size: 60px 60px, 60px 60px, 30px 40px, 80px 30px, 40px 40px;
+
+		&__info {
+			&__item {
+				font-size: 15px;
+
+				&.contacts__info__item--address {
+					padding: 3px;
+				}
+			}
+
+			&__link {
+				padding: 3px;
+			}
+		}
+	}
+
+	.footer {
+		&__link {
+			font-size: 12px;
+		}
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.title {
+		font-size: 34px;
+	}
+
+	.top {
+		background-size: 60px 110px, 100px 40px, 70px 80px, 20px 30px, 50px 50px, 50px 60px, 150px 40px;
+
+		&__subtitle {
+			font-size: 16px;
+			padding-bottom: 30px;
+		}
+
+		&__button {
+			padding: 10px 25px;
+			font-size: 16px;
+		}
+	}
+
+	.popup {
+		padding: 20px 30px;
+		&__form {
+			&__label {
+				& + & {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}

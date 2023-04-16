@@ -1,0 +1,24 @@
+$default-color: #282828;
+$accent-color: #f1d86c;
+$heading-color: #a87b22;
+
+@mixin default-text {
+	font: {
+		family: "Montserrat", sans-serif;
+		weight: 400;
+	}
+	color: $default-color;
+}
+
+@mixin heading {
+	font: {
+		family: "Spectral", sans-serif;
+		size: 72px;
+		weight: 400;
+	}
+	text-transform: uppercase;
+	text-align: center;
+	color: $heading-color;
+
+	padding: 20px 0;
+}

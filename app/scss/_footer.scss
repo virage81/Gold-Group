@@ -1,0 +1,46 @@
+.footer {
+	height: 60px;
+
+	background-color: $accent-color;
+
+	&__inner {
+		height: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0 30px;
+	}
+
+	&__link {
+		@include default-text;
+		text-decoration: none;
+
+		&:first-child::after {
+			display: none;
+		}
+
+		&::after {
+			display: block;
+			content: "";
+
+			position: relative;
+			bottom: 0;
+			left: 0;
+			right: 0;
+
+			width: 0;
+			height: 1px;
+
+			background-color: $default-color;
+
+			transition: all 0.2s ease-in-out;
+		}
+
+		&:hover {
+			&::after {
+				width: 100%;
+			}
+		}
+	}
+}
