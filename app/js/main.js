@@ -6,7 +6,17 @@ let topButton = document.querySelector("#top-button"),
 	headerLinks = document.querySelectorAll(".header__nav__link, .header__logo"),
 	phone_inputs = document.querySelectorAll("#phone"),
 	body = document.querySelector(".body"),
-	sections = document.querySelectorAll("section");
+	sections = document.querySelectorAll("section"),
+	blocks = document.querySelectorAll(".about, .features, .form, .contacts");
+
+// фиксированная высота
+window.onload = (e) => {
+	sections[0].style.height = `${window.innerHeight}px`;
+
+	for (let elem of blocks) {
+		elem.style.height = `${window.innerHeight - 60}px`;
+	}
+};
 
 // навигация на странице
 for (let link of headerLinks) {
