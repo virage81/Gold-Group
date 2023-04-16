@@ -8,7 +8,7 @@
 
 ## Phase:
 
-Correcting project
+Added data
 
 --> https://virage81.github.io/Gold-Group <--
 
