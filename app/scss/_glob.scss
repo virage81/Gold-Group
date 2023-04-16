@@ -44,7 +44,8 @@ html {
 .features,
 .form,
 .contacts {
-	min-height: calc(100vh - 60px);
+	height: calc(100vh - 60px);
+	min-height: 100%;
 }
 
 .popup {
