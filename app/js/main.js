@@ -1,11 +1,23 @@
-// swiper slider
+"use strict";
 let topButton = document.querySelector("#top-button"),
 	popup = document.querySelector(".popup"),
 	headerBtn = document.querySelector("#header-button"),
 	headerNav = document.querySelector(".header__nav"),
 	headerLinks = document.querySelectorAll(".header__nav__link, .header__logo"),
 	phone_inputs = document.querySelectorAll("#phone"),
-	body = document.querySelector(".body");
+	body = document.querySelector(".body"),
+	sections = document.querySelectorAll("section");
+
+// навигация на странице
+for (let link of headerLinks) {
+	link.onclick = function () {
+		sections.forEach((elem) => {
+			if (link.getAttribute("data-href") == elem.getAttribute("data-scroll")) {
+				window.scrollTo({ left: 0, top: elem.offsetTop - 60, behavior: "smooth" });
+			}
+		});
+	};
+}
 
 // отображение модального окна
 topButton.addEventListener("click", () => {

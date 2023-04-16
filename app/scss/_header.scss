@@ -37,6 +37,7 @@
 		&__link {
 			@include default-text;
 			text-decoration: none;
+			cursor: pointer;
 
 			&::after {
 				display: block;
