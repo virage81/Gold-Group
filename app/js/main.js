@@ -9,12 +9,18 @@ let topButton = document.querySelector("#top-button"),
 // отображение модального окна
 topButton.addEventListener("click", () => {
 	popup.classList.add("popup--show");
-	document.querySelector("body").style.overflow = "hidden";
+	document.querySelector("body").style.overflowY = "hidden";
 });
 
-window.addEventListener("click", function (e) {
-	if (e.target == popup) popup.classList.remove("popup--show");
-	document.querySelector("body").style.overflow = "visible";
+let events = ["click", "touchstart"];
+
+events.forEach((elem) => {
+	window.addEventListener(elem, function (e) {
+		if (e.target == popup) {
+			popup.classList.remove("popup--show");
+			document.querySelector("body").style.overflowY = "visible";
+		}
+	});
 });
 
 // Маска номера телефона
