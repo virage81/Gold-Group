@@ -4,12 +4,13 @@ let topButton = document.querySelector("#top-button"),
 	headerBtn = document.querySelector("#header-button"),
 	headerNav = document.querySelector(".header__nav"),
 	headerLinks = document.querySelectorAll(".header__nav__link, .header__logo"),
-	phone_inputs = document.querySelectorAll("#phone");
+	phone_inputs = document.querySelectorAll("#phone"),
+	wrapper = document.querySelector(".wrapper");
 
 // отображение модального окна
 topButton.addEventListener("click", () => {
 	popup.classList.add("popup--show");
-	document.querySelector("body").style.overflowY = "hidden";
+	wrapper.style.overflowY = "hidden";
 });
 
 let events = ["click", "touchstart"];
@@ -18,7 +19,7 @@ events.forEach((elem) => {
 	window.addEventListener(elem, function (e) {
 		if (e.target == popup) {
 			popup.classList.remove("popup--show");
-			document.querySelector("body").style.overflowY = "visible";
+			wrapper.style.overflowY = "visible";
 		}
 	});
 });
