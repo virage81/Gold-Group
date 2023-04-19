@@ -78,7 +78,6 @@ html {
 
 .popup {
 	transform: translateY(-100%);
-	visibility: hidden;
 
 	position: fixed;
 	top: 0;
@@ -91,7 +90,7 @@ html {
 	justify-content: center;
 	align-items: center;
 
-	transition: transform 0.2s ease-in-out, visibility 0.1s ease-in-out;
+	transition: transform 0.2s ease-in-out;
 
 	.popup__inner {
 		width: calc(100vw - 30px);
@@ -102,7 +101,6 @@ html {
 
 	&.popup--show {
 		transform: translateY(0);
-		visibility: visible;
 	}
 
 	&__inner {

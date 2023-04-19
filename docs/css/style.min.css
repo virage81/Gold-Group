@@ -164,7 +164,6 @@ html {
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
-  visibility: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -180,11 +179,11 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: visibility 0.1s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  transition: visibility 0.1s ease-in-out, -webkit-transform 0.2s ease-in-out;
-  -o-transition: transform 0.2s ease-in-out, visibility 0.1s ease-in-out;
-  transition: transform 0.2s ease-in-out, visibility 0.1s ease-in-out;
-  transition: transform 0.2s ease-in-out, visibility 0.1s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 .popup .popup__inner {
   width: calc(100vw - 30px);
@@ -198,7 +197,6 @@ html {
   -webkit-transform: translateY(0);
       -ms-transform: translateY(0);
           transform: translateY(0);
-  visibility: visible;
 }
 .popup__inner {
   max-width: 600px;
