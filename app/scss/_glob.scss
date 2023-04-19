@@ -17,6 +17,34 @@ html {
 	background-color: #232323;
 
 	line-height: 1;
+
+	&::before {
+		content: "";
+		display: block;
+
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 5;
+
+		visibility: hidden;
+
+		width: 100vw;
+		height: 100vh;
+
+		backdrop-filter: blur(0);
+
+		transition: backdrop-filter 0.1s ease-in-out, visibility 0.1s ease-in-out;
+	}
+
+	&.body--blur {
+		&::before {
+			visibility: visible;
+			backdrop-filter: blur(20px);
+		}
+	}
 }
 
 .main {
@@ -50,7 +78,7 @@ html {
 
 .popup {
 	transform: translateY(-100%);
-	opacity: 0;
+	visibility: hidden;
 
 	position: fixed;
 	top: 0;
@@ -63,24 +91,18 @@ html {
 	justify-content: center;
 	align-items: center;
 
-	transition: all 0.3s ease-in-out;
+	transition: transform 0.2s ease-in-out, visibility 0.1s ease-in-out;
 
 	.popup__inner {
 		width: calc(100vw - 30px);
-		box-shadow: 0px 2px 10px rgba(168, 123, 34, 0);
-		transition: all 0.2s cubic-bezier(0.28, -0.03, 0.31, 1.08);
+		box-shadow: 0px 2px 10px rgba(168, 123, 34, 0.7);
+
+		transform: box-shadow 0.2s ease-in-out;
 	}
 
 	&.popup--show {
 		transform: translateY(0);
 		visibility: visible;
-		opacity: 1;
-
-		backdrop-filter: blur(20px);
-
-		.popup__inner {
-			box-shadow: 0px 2px 10px rgba(168, 123, 34, 0.7);
-		}
 	}
 
 	&__inner {

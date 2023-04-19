@@ -1,12 +1,12 @@
 "use strict";
 let topButton = document.querySelector("#top-button"),
+	body = document.querySelector(".body"),
 	popup = document.querySelector(".popup"),
 	header = document.querySelector(".header"),
 	headerBtn = document.querySelector("#header-button"),
 	headerNav = document.querySelector(".header__nav"),
 	headerLinks = document.querySelectorAll(".header__logo, .header__nav__link "),
 	phone_inputs = document.querySelectorAll("#phone"),
-	body = document.querySelector(".body"),
 	sections = document.querySelectorAll("section"),
 	blocks = document.querySelectorAll(".about, .features, .form, .contacts");
 
@@ -31,8 +31,10 @@ for (let link of headerLinks) {
 }
 
 // отображение формы
-topButton.addEventListener("click", () => {
+topButton.addEventListener("click", (e) => {
+	console.log(e.target);
 	popup.classList.add("popup--show");
+	body.classList.add("body--blur");
 });
 
 let events = ["click", "touchstart"];
@@ -41,6 +43,7 @@ events.forEach((elem) => {
 	window.addEventListener(elem, function (e) {
 		if (e.target == popup) {
 			popup.classList.remove("popup--show");
+			body.classList.remove("body--blur");
 		}
 	});
 });
