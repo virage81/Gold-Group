@@ -32,8 +32,9 @@ for (let link of headerLinks) {
 
 // отображение формы
 topButton.addEventListener("click", (e) => {
-	console.log(e.target);
-	popup.classList.add("popup--show");
+	popup.className = "popup popup--show";
+
+	// popup.classList.add("popup--show");
 	body.classList.add("body--blur");
 });
 
@@ -42,7 +43,9 @@ let events = ["click", "touchstart"];
 events.forEach((elem) => {
 	window.addEventListener(elem, function (e) {
 		if (e.target == popup) {
-			popup.classList.remove("popup--show");
+			popup.className = "popup";
+
+			// popup.classList.remove("popup--show");
 			body.classList.remove("body--blur");
 		}
 	});
