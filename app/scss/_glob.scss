@@ -77,7 +77,7 @@ html {
 }
 
 .popup {
-	transform: translateY(-100%);
+	transform: translate3d(0, -100%, 0);
 
 	position: fixed;
 	top: 0;
@@ -100,7 +100,7 @@ html {
 	}
 
 	&.popup--show {
-		transform: translateY(0);
+		transform: translate3D(0, 0, 0);
 	}
 
 	&__inner {
