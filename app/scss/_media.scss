@@ -105,8 +105,37 @@
 
 @media only screen and (max-width: 900px) {
 	.header {
+		&::before {
+			content: "";
+			display: block;
+
+			position: absolute;
+			top: 60px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+
+			visibility: hidden;
+			backdrop-filter: blur(20px);
+
+			width: 100vw;
+			height: 100vh;
+
+			opacity: 0;
+
+			transition: opacity 0.05s ease-in-out, visibility 0.05s ease-in-out;
+		}
+
+		&.header--blur {
+			&::before {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
 		&__nav {
-			transform: translateY(-200%);
+			transform: translateY(calc(-100% - 60px));
 			visibility: hidden;
 			display: block;
 
@@ -114,33 +143,13 @@
 			top: 60px;
 			left: 0;
 			right: 0;
-			z-index: 9;
+			z-index: 5;
 
 			padding-top: 20px;
 
 			background-color: $accent-color;
 
-			transition: all 0.2s ease-in-out;
-
-			&::before {
-				content: "";
-				display: block;
-
-				position: absolute;
-				top: 355px;
-				left: 0;
-				right: 0;
-				bottom: 0;
-
-				backdrop-filter: blur(0px);
-
-				width: 100vw;
-				height: 100vh;
-				z-index: -1;
-
-				transition: all 0.2s ease-in-out;
-				transition-delay: 0.2s;
-			}
+			transition: transform 0.15s ease-in-out, visibility 0.15s ease-in-out;
 
 			&__list {
 				flex-direction: column;
@@ -168,10 +177,6 @@
 			&.header__nav--show {
 				transform: translateY(0);
 				visibility: visible;
-
-				&::before {
-					backdrop-filter: blur(20px);
-				}
 			}
 		}
 
@@ -180,7 +185,7 @@
 		}
 
 		&__button {
-			display: block;
+			display: flex;
 		}
 	}
 

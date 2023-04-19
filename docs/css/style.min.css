@@ -328,9 +328,19 @@ html {
 }
 .header__button {
   display: none;
-  padding: 8px 0;
-  width: 30px;
-  height: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px;
+  width: 50px;
+  height: 40px;
   background: none;
   border: none;
   outline: none;
@@ -343,7 +353,7 @@ html {
   background-color: #282828;
   border-radius: 10px;
   height: 3px;
-  width: 100%;
+  width: 30px;
   display: block;
 }
 .header__button::before, .header__button::after {
@@ -355,7 +365,7 @@ html {
   background: #282828;
   border-radius: 10px;
   height: 3px;
-  width: 100%;
+  width: 30px;
   -webkit-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
@@ -629,6 +639,9 @@ html {
   max-height: 585px;
   height: 100%;
 }
+.contacts__map ymaps {
+  border-radius: 5px;
+}
 .contacts__info {
   max-width: 450px;
   width: 100%;
@@ -803,42 +816,47 @@ html {
   }
 }
 @media only screen and (max-width: 900px) {
+  .header::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    visibility: hidden;
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    -webkit-transition: opacity 0.05s ease-in-out, visibility 0.05s ease-in-out;
+    -o-transition: opacity 0.05s ease-in-out, visibility 0.05s ease-in-out;
+    transition: opacity 0.05s ease-in-out, visibility 0.05s ease-in-out;
+  }
+  .header.header--blur::before {
+    opacity: 1;
+    visibility: visible;
+  }
   .header__nav {
-    -webkit-transform: translateY(-200%);
-        -ms-transform: translateY(-200%);
-            transform: translateY(-200%);
+    -webkit-transform: translateY(calc(-100% - 60px));
+        -ms-transform: translateY(calc(-100% - 60px));
+            transform: translateY(calc(-100% - 60px));
     visibility: hidden;
     display: block;
     position: absolute;
     top: 60px;
     left: 0;
     right: 0;
-    z-index: 9;
+    z-index: 5;
     padding-top: 20px;
     background-color: #f1d86c;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-  }
-  .header__nav::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 355px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    -webkit-backdrop-filter: blur(0px);
-            backdrop-filter: blur(0px);
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    -webkit-transition-delay: 0.2s;
-         -o-transition-delay: 0.2s;
-            transition-delay: 0.2s;
+    -webkit-transition: visibility 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    transition: visibility 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
+    -o-transition: transform 0.15s ease-in-out, visibility 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out, visibility 0.15s ease-in-out;
+    transition: transform 0.15s ease-in-out, visibility 0.15s ease-in-out, -webkit-transform 0.15s ease-in-out;
   }
   .header__nav__list {
     -webkit-box-orient: vertical;
@@ -868,10 +886,6 @@ html {
             transform: translateY(0);
     visibility: visible;
   }
-  .header__nav.header__nav--show::before {
-    -webkit-backdrop-filter: blur(20px);
-            backdrop-filter: blur(20px);
-  }
   .header__list {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -879,7 +893,9 @@ html {
             flex-direction: column;
   }
   .header__button {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   .top {
     background-position: top 60px left, top 60px center, top 60px right, center right, bottom right, bottom left, bottom center;

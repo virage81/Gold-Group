@@ -1,6 +1,7 @@
 "use strict";
 let topButton = document.querySelector("#top-button"),
 	popup = document.querySelector(".popup"),
+	header = document.querySelector(".header"),
 	headerBtn = document.querySelector("#header-button"),
 	headerNav = document.querySelector(".header__nav"),
 	headerLinks = document.querySelectorAll(".header__nav__link, .header__logo"),
@@ -29,7 +30,7 @@ for (let link of headerLinks) {
 	};
 }
 
-// отображение модального окна
+// отображение формы
 topButton.addEventListener("click", () => {
 	popup.classList.add("popup--show");
 });
@@ -76,9 +77,19 @@ headerBtn.addEventListener("click", (e) => {
 	if (headerNav.classList.contains("header__nav--show")) {
 		headerBtn.classList.remove("header__button--close");
 		headerNav.classList.remove("header__nav--show");
+		header.classList.remove("header--blur");
 	} else {
 		headerBtn.classList.add("header__button--close");
 		headerNav.classList.add("header__nav--show");
+		header.classList.add("header--blur");
+	}
+});
+
+window.addEventListener("click", (e) => {
+	if (e.target == header) {
+		headerBtn.classList.remove("header__button--close");
+		headerNav.classList.remove("header__nav--show");
+		header.classList.remove("header--blur");
 	}
 });
 
@@ -86,6 +97,7 @@ headerLinks.forEach((item) => {
 	item.addEventListener("click", () => {
 		headerBtn.classList.remove("header__button--close");
 		headerNav.classList.remove("header__nav--show");
+		header.classList.remove("header--blur");
 	});
 });
 
