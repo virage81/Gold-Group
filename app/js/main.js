@@ -1,4 +1,3 @@
-"use strict";
 let topButton = document.querySelector("#top-button"),
 	body = document.querySelector(".body"),
 	popup = document.querySelector(".popup"),
@@ -8,7 +7,8 @@ let topButton = document.querySelector("#top-button"),
 	headerLinks = document.querySelectorAll(".header__logo, .header__nav__link "),
 	phone_inputs = document.querySelectorAll("#phone"),
 	sections = document.querySelectorAll("section"),
-	blocks = document.querySelectorAll(".about, .features, .form, .contacts");
+	blocks = document.querySelectorAll(".about, .features, .form, .contacts"),
+	forms = document.querySelectorAll("#form");
 
 // фиксированная высота
 window.onload = (e) => {
@@ -29,6 +29,29 @@ for (let link of headerLinks) {
 		});
 	};
 }
+
+// Отправка формы
+const CHAT_ID = -959048149;
+const TOKEN = "5821700538:AAHKBJfWzvTB7F6SUHvSZQ9b8h1VI52vx68";
+const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
+forms.forEach(function (form) {
+	form.addEventListener("submit", function (e) {
+		e.preventDefault();
+
+		let message = `<b>ФИО:</b> ${this.last_name.value} ${this.first_name.value} ${
+			this.surname.value != "" ? this.surname.value : ""
+		}\n<b>Телефон:</b> ${this.phone.value}`;
+
+		axios.post(URL_API, {
+			chat_id: CHAT_ID,
+			text: message,
+			parse_mode: "html",
+		});
+
+		e.target.reset();
+	});
+});
 
 // отображение формы
 topButton.addEventListener("click", (e) => {

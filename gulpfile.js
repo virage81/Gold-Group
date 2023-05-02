@@ -32,22 +32,28 @@ function styles() {
 }
 
 function scripts() {
-	return src("app/js/main.js").pipe(concat("main.min.js")).pipe(uglify()).pipe(dest("app/js")).pipe(browserSync.stream());
+	return src(["node_modules/axios/dist/axios.min.js", "app/js/main.js"])
+		.pipe(concat("main.min.js"))
+		.pipe(uglify())
+		.pipe(dest("app/js"))
+		.pipe(browserSync.stream());
 }
 
 function images() {
-	return src("app/img/**/*.*")
-		.pipe(
-			imagemin([
-				imagemin.gifsicle({ interlaced: true }),
-				imagemin.mozjpeg({ quality: 75, progressive: true }),
-				imagemin.optipng({ optimizationLevel: 5 }),
-				imagemin.svgo({
-					plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
-				}),
-			])
-		)
-		.pipe(dest("docs/img"));
+	return (
+		src("app/img/**/*.*")
+			// .pipe(
+			// 	imagemin([
+			// 		imagemin.gifsicle({ interlaced: true }),
+			// 		imagemin.mozjpeg({ quality: 75, progressive: true }),
+			// 		imagemin.optipng({ optimizationLevel: 5 }),
+			// 		imagemin.svgo({
+			// 			plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+			// 		}),
+			// 	])
+			// )
+			.pipe(dest("docs/img"))
+	);
 }
 
 function build() {
