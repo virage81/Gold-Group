@@ -33,8 +33,7 @@ for (let link of headerLinks) {
 }
 
 // Отправка формы
-// const CHAT_ID = -959048149;
-const CHAT_ID = -964009029;
+const CHAT_ID = -959048149;
 const TOKEN = "5821700538:AAHKBJfWzvTB7F6SUHvSZQ9b8h1VI52vx68";
 const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
