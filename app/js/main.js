@@ -1,6 +1,8 @@
 let topButton = document.querySelector("#top-button"),
 	body = document.querySelector(".body"),
 	popup = document.querySelector(".popup"),
+	form_container = document.querySelectorAll(".popup, .form__content"),
+	popup_response = document.querySelectorAll(".popup__form__text--response"),
 	header = document.querySelector(".header"),
 	headerBtn = document.querySelector("#header-button"),
 	headerNav = document.querySelector(".header__nav"),
@@ -35,21 +37,40 @@ const CHAT_ID = -959048149;
 const TOKEN = "5821700538:AAHKBJfWzvTB7F6SUHvSZQ9b8h1VI52vx68";
 const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
+let err_message = "Ошибка отправки заявки",
+	suc_message = "Заявка отправлена";
+
 forms.forEach(function (form) {
 	form.addEventListener("submit", function (e) {
 		e.preventDefault();
 
-		let message = `<b>ФИО:</b> ${this.last_name.value} ${this.first_name.value} ${
-			this.surname.value != "" ? this.surname.value : ""
-		}\n<b>Телефон:</b> ${this.phone.value}`;
+		let message = "<b>ФИО:</b>";
+		message += `${this.last_name.value} ${this.first_name.value} ${this.surname.value != "" ? this.surname.value : ""}\n`;
+		message += `<b>Телефон:</b> ${this.phone.value}`;
 
 		axios.post(URL_API, {
 			chat_id: CHAT_ID,
 			text: message,
 			parse_mode: "html",
-		});
+			disable_notifications: true,
+		})
+			.then((res) => {
+				form_container.forEach((item) => {
+					item.classList.add("success");
+				});
 
-		e.target.reset();
+				popup_response.forEach(function (item) {
+					item.innerHTML = suc_message;
+				});
+
+				e.target.reset();
+			})
+			.catch((error) => {
+				popup_response.forEach(function (item) {
+					item.innerHTML = err_message;
+				});
+				console.log(error);
+			});
 	});
 });
 

@@ -112,6 +112,16 @@ html {
 		box-shadow: 0px 2px 10px rgba(168, 123, 34, 0.7);
 	}
 
+	&.success {
+		.popup__inner {
+			padding: 30px 40px 16px;
+		}
+
+		.popup__form__text--response {
+			height: fit-content;
+		}
+	}
+
 	&__form {
 		&__label {
 			display: block;
@@ -159,6 +169,14 @@ html {
 			& + & {
 				margin-top: 20px;
 			}
+
+			&--response {
+				height: 0;
+				overflow-y: hidden;
+				text-align: center;
+
+				transition: height 0.2s ease-in-out;
+			}
 		}
 
 		&__button {
@@ -170,6 +188,7 @@ html {
 			width: 100%;
 
 			padding: 12px 0;
+			margin-bottom: 5px;
 
 			font-family: "Spectral", sans-serif;
 			font-size: 24px;
@@ -183,5 +202,15 @@ html {
 				box-shadow: #b8b8b8 0 3px 20px 0;
 			}
 		}
+	}
+}
+
+.form__content.success {
+	.popup__inner {
+		padding: 30px 40px 16px;
+	}
+
+	.popup__form__text--response {
+		height: fit-content;
 	}
 }

@@ -41,6 +41,7 @@
 					<p class="popup__form__text">* Поля, обязательные для заполнения</p>
 					<p class="popup__form__text">Нажимая на кнопку, вы даете своё согласние на персональную обработку данных</p>
 					<button class="popup__form__button" type="submit">Отправить заявку</button>
+					<p class="popup__form__text popup__form__text--response"></p>
 				</form>
 			</div>
 		</div>
@@ -124,15 +125,29 @@
 								<form class="popup__form" id="form" method="POST">
 									<label class="popup__form__label">
 										Фамилия*
-										<input class="popup__form__input" type="text" name="last_name" placeholder="Иванов" required />
+										<input
+											class="popup__form__input"
+											type="text"
+											name="last_name"
+											placeholder="Иванов"
+											required
+											value="test"
+										/>
 									</label>
 									<label class="popup__form__label">
 										Имя*
-										<input class="popup__form__input" type="text" name="first_name" placeholder="Иван" required />
+										<input
+											class="popup__form__input"
+											type="text"
+											name="first_name"
+											placeholder="Иван"
+											required
+											value="test"
+										/>
 									</label>
 									<label class="popup__form__label">
 										Отчество
-										<input class="popup__form__input" type="text" name="surname" placeholder="Иванович" />
+										<input class="popup__form__input" type="text" name="surname" placeholder="Иванович" value="test" />
 									</label>
 									<label class="popup__form__label">
 										Номер телефона*
@@ -143,7 +158,7 @@
 											name="phone"
 											placeholder="+7 999 999-99-99"
 											maxlength="17"
-											value=""
+											value="7999999999"
 											pattern="+7([0-9]{3}) [0-9]{3}-[0-9]{2}-[0-9]{2}"
 											required
 										/>
@@ -153,6 +168,7 @@
 										Нажимая на кнопку, вы даете своё согласние на персональную обработку данных
 									</p>
 									<button class="popup__form__button" type="submit">Отправить заявку</button>
+									<p class="popup__form__text popup__form__text--response"></p>
 								</form>
 							</div>
 						</div>
