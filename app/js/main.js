@@ -33,7 +33,8 @@ for (let link of headerLinks) {
 }
 
 // Отправка формы
-const CHAT_ID = -959048149;
+// const CHAT_ID = -959048149;
+const CHAT_ID = -964009029;
 const TOKEN = "5821700538:AAHKBJfWzvTB7F6SUHvSZQ9b8h1VI52vx68";
 const URL_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
@@ -52,11 +53,10 @@ forms.forEach(function (form) {
 			chat_id: CHAT_ID,
 			text: message,
 			parse_mode: "html",
-			disable_notifications: true,
 		})
 			.then((res) => {
 				form_container.forEach((item) => {
-					item.classList.add("success");
+					item.classList.add("response");
 				});
 
 				popup_response.forEach(function (item) {
@@ -66,6 +66,9 @@ forms.forEach(function (form) {
 				e.target.reset();
 			})
 			.catch((error) => {
+				form_container.forEach((item) => {
+					item.classList.add("response");
+				});
 				popup_response.forEach(function (item) {
 					item.innerHTML = err_message;
 				});

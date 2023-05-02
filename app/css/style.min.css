@@ -205,10 +205,10 @@ html {
   -webkit-box-shadow: 0px 2px 10px rgba(168, 123, 34, 0.7);
           box-shadow: 0px 2px 10px rgba(168, 123, 34, 0.7);
 }
-.popup.success .popup__inner {
+.popup.response .popup__inner {
   padding: 30px 40px 16px;
 }
-.popup.success .popup__form__text--response {
+.popup.response .popup__form__text--response {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -290,10 +290,10 @@ html {
           box-shadow: #b8b8b8 0 3px 20px 0;
 }
 
-.form__content.success .popup__inner {
+.form__content.response .popup__inner {
   padding: 30px 40px 16px;
 }
-.form__content.success .popup__form__text--response {
+.form__content.response .popup__form__text--response {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
